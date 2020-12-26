@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17156" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait" appearance="dark"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17126"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Calender View Controller-->
+        <scene sceneID="86k-LI-27R">
+            <objects>
+                <viewController storyboardIdentifier="calender" useStoryboardIdentifierAsRestorationIdentifier="YES" id="x0p-xB-nfi" customClass="CalenderViewController" customModule="diaryApp" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="btW-R5-GiQ">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="dOd-xq-Nbu">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                                <color key="backgroundColor" name="MainBlue"/>
+                                <color key="barTintColor" name="MainBlue"/>
+                                <items>
+                                    <navigationItem id="YnL-x7-6PK">
+                                        <barButtonItem key="leftBarButtonItem" systemItem="stop" id="Lqw-C4-JC6">
+                                            <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            <connections>
+                                                <action selector="buckButtonPressed:" destination="x0p-xB-nfi" id="N0a-5w-TD9"/>
+                                            </connections>
+                                        </barButtonItem>
+                                    </navigationItem>
+                                </items>
+                            </navigationBar>
+                            <view contentMode="scaleAspectFit" translatesAutoresizingMaskIntoConstraints="NO" id="ulr-Je-k5h" customClass="FSCalendar">
+                                <rect key="frame" x="0.0" y="64" width="375" height="543"/>
+                                <color key="backgroundColor" name="MainBlue"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="headerTitleColor">
+                                        <color key="value" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="titleDefaultColor">
+                                        <color key="value" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="weekdayTextColor">
+                                        <color key="value" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="headerDateFormat" value="yyyy/MM"/>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="headerMinimumDissolvedAlpha">
+                                        <real key="value" value="43"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="headerTitleTextSize">
+                                        <real key="value" value="31"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="weekdayTextSize">
+                                        <real key="value" value="20"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="titleTextSize">
+                                        <real key="value" value="30"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <outlet property="dataSource" destination="x0p-xB-nfi" id="d1x-g2-XLB"/>
+                                    <outlet property="delegate" destination="x0p-xB-nfi" id="OzJ-Gh-OsC"/>
+                                </connections>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="eFy-uV-TyX" customClass="GADBannerView">
+                                <rect key="frame" x="27.5" y="617" width="320" height="50"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="UX8-ZA-6E7"/>
+                                    <constraint firstAttribute="width" constant="320" id="adf-KO-NwU"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="THA-Fs-fK1"/>
+                        <color key="backgroundColor" name="MainBlue"/>
+                        <constraints>
+                            <constraint firstItem="ulr-Je-k5h" firstAttribute="top" secondItem="dOd-xq-Nbu" secondAttribute="bottom" constant="20" id="BQa-to-rs6"/>
+                            <constraint firstItem="ulr-Je-k5h" firstAttribute="leading" secondItem="THA-Fs-fK1" secondAttribute="leading" id="Cff-Vd-DHh"/>
+                            <constraint firstItem="eFy-uV-TyX" firstAttribute="centerX" secondItem="btW-R5-GiQ" secondAttribute="centerX" id="TSF-Um-zzF"/>
+                            <constraint firstItem="dOd-xq-Nbu" firstAttribute="leading" secondItem="THA-Fs-fK1" secondAttribute="leading" id="bUF-KJ-g4N"/>
+                            <constraint firstItem="dOd-xq-Nbu" firstAttribute="trailing" secondItem="THA-Fs-fK1" secondAttribute="trailing" id="hLj-Pu-iPu"/>
+                            <constraint firstItem="eFy-uV-TyX" firstAttribute="bottom" secondItem="THA-Fs-fK1" secondAttribute="bottom" id="irZ-Op-d11"/>
+                            <constraint firstItem="THA-Fs-fK1" firstAttribute="trailing" secondItem="ulr-Je-k5h" secondAttribute="trailing" id="tf4-9M-zI4"/>
+                            <constraint firstItem="dOd-xq-Nbu" firstAttribute="top" secondItem="THA-Fs-fK1" secondAttribute="top" id="wNq-t6-gVr"/>
+                            <constraint firstItem="THA-Fs-fK1" firstAttribute="bottom" secondItem="ulr-Je-k5h" secondAttribute="bottom" constant="60" id="xRZ-Eh-jPA"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="bannerView" destination="eFy-uV-TyX" id="iWn-QQ-Gk9"/>
+                        <outlet property="calendar" destination="ulr-Je-k5h" id="3UE-e6-Whg"/>
+                        <outlet property="navigationBar" destination="dOd-xq-Nbu" id="3ar-t6-EFX"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="jlX-6W-KAt" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="282.39999999999998" y="-124.58770614692655"/>
+        </scene>
+    </scenes>
+    <resources>
+        <namedColor name="MainBlue">
+            <color red="0.44999998807907104" green="0.8970000147819519" blue="0.96899998188018799" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>

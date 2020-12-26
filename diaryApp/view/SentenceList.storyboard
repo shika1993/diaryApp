@@ -1,0 +1,139 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17506" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="dark"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17505"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Sentence List View Controller-->
+        <scene sceneID="ZiQ-bL-cqV">
+            <objects>
+                <viewController storyboardIdentifier="SentenceList" useStoryboardIdentifierAsRestorationIdentifier="YES" id="dbg-TU-mdL" customClass="SentenceListViewController" customModule="diaryApp" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="scW-4p-1bo">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="bar" selectedSegmentIndex="0" id="O6N-Rp-F1j">
+                                <rect key="frame" x="141" y="431" width="131" height="33"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <segments>
+                                    <segment title="日本語"/>
+                                    <segment title="英語"/>
+                                </segments>
+                            </segmentedControl>
+                            <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="pcl-01-6Ga">
+                                <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                                <color key="barTintColor" name="MainBlue"/>
+                                <items>
+                                    <navigationItem id="nep-9t-fAG">
+                                        <barButtonItem key="leftBarButtonItem" style="done" systemItem="reply" id="R6A-iN-Uu6">
+                                            <connections>
+                                                <action selector="backBarButtonPressed:" destination="dbg-TU-mdL" id="O8W-aH-cJd"/>
+                                            </connections>
+                                        </barButtonItem>
+                                        <rightBarButtonItems>
+                                            <barButtonItem image="uncheck" style="done" id="k7C-YL-HNW">
+                                                <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="x5E-sZ-Nzs">
+                                                    <rect key="frame" x="266" y="0.0" width="128" height="44"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <state key="normal" image="uncheck"/>
+                                                    <connections>
+                                                        <action selector="checkMarkButtonPressed:" destination="dbg-TU-mdL" eventType="touchUpInside" id="R0k-zq-PGx"/>
+                                                    </connections>
+                                                </button>
+                                                <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            </barButtonItem>
+                                            <barButtonItem style="done" id="yEm-ay-5ah">
+                                                <segmentedControl key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="bar" selectedSegmentIndex="0" id="5WE-ur-1kV">
+                                                    <rect key="frame" x="127" y="5.5" width="131" height="33"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <segments>
+                                                        <segment title="日本語"/>
+                                                        <segment title="英語"/>
+                                                    </segments>
+                                                    <color key="selectedSegmentTintColor" name="MainBlue"/>
+                                                    <connections>
+                                                        <action selector="selectButtonPressed:" destination="dbg-TU-mdL" eventType="valueChanged" id="HLC-i4-D7f"/>
+                                                    </connections>
+                                                </segmentedControl>
+                                            </barButtonItem>
+                                        </rightBarButtonItems>
+                                    </navigationItem>
+                                </items>
+                            </navigationBar>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="RHV-Bw-da0">
+                                <rect key="frame" x="0.0" y="88" width="414" height="808"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <color key="sectionIndexBackgroundColor" name="MainBlue"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" restorationIdentifier="cell" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" reuseIdentifier="cell" id="2Gf-bd-gTw">
+                                        <rect key="frame" x="0.0" y="28" width="414" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="2Gf-bd-gTw" id="Kvh-3u-4bA">
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="44"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fdK-3C-MU3">
+                                                    <rect key="frame" x="38" y="12" width="42" height="21"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                        </tableViewCellContentView>
+                                        <color key="backgroundColor" name="MainBlue"/>
+                                    </tableViewCell>
+                                </prototypes>
+                            </tableView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="SH4-w0-g9S" customClass="GADBannerView">
+                                <rect key="frame" x="47" y="846" width="320" height="50"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="Hnz-Tn-V9S"/>
+                                    <constraint firstAttribute="width" constant="320" id="k3d-aj-am7"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="fKZ-7j-6KM"/>
+                        <color key="backgroundColor" name="MainBlue"/>
+                        <constraints>
+                            <constraint firstItem="RHV-Bw-da0" firstAttribute="trailing" secondItem="fKZ-7j-6KM" secondAttribute="trailing" id="1PR-xh-a5v"/>
+                            <constraint firstItem="SH4-w0-g9S" firstAttribute="centerX" secondItem="scW-4p-1bo" secondAttribute="centerX" id="2TC-Qj-cQf"/>
+                            <constraint firstAttribute="bottom" secondItem="SH4-w0-g9S" secondAttribute="bottom" id="CuV-Cc-drt"/>
+                            <constraint firstItem="pcl-01-6Ga" firstAttribute="top" secondItem="fKZ-7j-6KM" secondAttribute="top" id="Igj-Ee-x6P"/>
+                            <constraint firstItem="pcl-01-6Ga" firstAttribute="trailing" secondItem="fKZ-7j-6KM" secondAttribute="trailing" id="MqR-o3-866"/>
+                            <constraint firstAttribute="bottom" secondItem="RHV-Bw-da0" secondAttribute="bottom" id="UhR-cR-US7"/>
+                            <constraint firstItem="RHV-Bw-da0" firstAttribute="leading" secondItem="fKZ-7j-6KM" secondAttribute="leading" id="bc3-PE-2Pr"/>
+                            <constraint firstItem="RHV-Bw-da0" firstAttribute="top" secondItem="pcl-01-6Ga" secondAttribute="bottom" id="l92-HC-EAp"/>
+                            <constraint firstItem="pcl-01-6Ga" firstAttribute="leading" secondItem="fKZ-7j-6KM" secondAttribute="leading" id="zhz-fs-qoc"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="bannerView" destination="SH4-w0-g9S" id="Et5-GS-oQ2"/>
+                        <outlet property="checkMarkButton" destination="x5E-sZ-Nzs" id="zA4-Gk-w4y"/>
+                        <outlet property="navigationBar" destination="pcl-01-6Ga" id="ief-bz-3Po"/>
+                        <outlet property="selectButtonItem" destination="5WE-ur-1kV" id="eoC-1n-0yi"/>
+                        <outlet property="sentenceListTableView" destination="RHV-Bw-da0" id="PB7-n8-ZQe"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ibi-Dq-OLP" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="340.57971014492756" y="123.88392857142857"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="uncheck" width="24" height="24"/>
+        <namedColor name="MainBlue">
+            <color red="0.44999998807907104" green="0.8970000147819519" blue="0.96899998188018799" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>
